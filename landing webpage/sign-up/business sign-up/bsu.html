@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/Users/zulfaalbalushi/Desktop/STOOQ/landing webpage/sign-up/business sign-up/bsu.css" rel="stylesheet" type="text/css">
+  <link rel="icon" type="image/x-icon"
+    href="https://github.com/plushieorganz/STOOQ/blob/main/Assets/STOOQ_logo.png?raw=true">
+  <title>Business Sign Up</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/x-icon"
+    href="https://github.com/plushieorganz/STOOQ/blob/main/Assets/STOOQ_logo.png?raw=true">
+</head>
+
+<body>
+  <div class="container">
+    <div class="logo">
+      <img id="logo" src="https://github.com/plushieorganz/STOOQ/blob/main/Assets/STOOQ_logo.png?raw=true" alt="Logo"
+        </img>
+    </div>
+    <h1>Join us on STOOQ!</h1>
+    <form>
+      <label for="username" class="heading">Username:</label>
+      <input type="text" id="username" name="username" placeholder="enter your username" required><br>
+
+      <label for="email" class="heading">Email address:</label>
+      <input type="email" id="email" name="email" placeholder="enter your email address" required><br>
+
+      <p id="disclaimer">*DISCLAIMER: our services are currently only offered in Muscat Governate.</p>
+      <label for="muscatProvinces" class="heading">Choose the province your business mainly operates in:</label><br>
+      <select class="provinceddm" required>
+        <option value="0">(Limited to Muscat Governate)</option>
+        <option value="1">Al Amerat</option>
+        <option value="2">Bawshar</option>
+        <option value="3">Muscat</option>
+        <option value="4">Muttrah</option>
+        <option value="5">Qurayyat</option>
+        <option value="6">Al Seeb</option>
+      </select><br>
+      <!-- make it so that if option 0 is selected, sign up isnt completed -->
+
+      <label for="password" class="heading">Password:</label>
+      <input type="password" id="password" name="password" placeholder="enter your password" onkeyup="checkPass" required><br>
+      <label for="password" class="heading">Re-enter Password:</label>
+      <input type="password" id="password2" name="password" placeholder="re-enter your password" onkeyup="checkPass" required><br>
+      <!-- fix checkPass function in script -->
+      <!-- make sure number of charcaters is 8 min -->
+
+      <label for="tandc">Please read our <a href="">Terms & Conditions</a> before proceeding</label>
+      <input type="checkbox" id="tandc" name="tandc" required><br>
+
+      <label for="newsl">Check this box if you want to sign up to our newsletter!</label>
+      <input type="checkbox" id="newsl" name="newsl"><br><br>
+
+      <div class="sbutton">
+        <button type="submit">Sign Up</button>
+        <!-- add a href to take u to home page if login works -->
+      </div>
+
+    </form>
+  </div>
+
+  <script>
+    function ProvinceSelect() {
+      var province = document.getElementById("provinceddm").value;
+      if (province == "0") {
+        alert("Please select a province!");
+      }
+    }
+    
+    function checkPass() {
+      var get_elem = document.getElementById().innerHTML,
+          pass1 = document.getElementById('password'),
+          pass2 = document.getElementById('password2'),
+          message = document.getElementById('confirmMessage'),
+
+      if (pass1.value != pass2.value) {
+        message = "Passwords do not match";
+      } else {
+        message = "Passwords match";
+      }
+    }
+    // nothing here works </3
+  </script>
+</body>
+</html>
