@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme : {
+                extend: {
+                    colors : {
+                        primary : "#5A10C7",
+                        "light-purple": "#CBC7FF",
+                        "light-purple-highlight": "#B3ADFB"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#f2f2f2] w-screen min-h-screen flex flex-col overflow-hidden">
+
+    <nav class="w-full bg-white shadow-md px-4 py-2 grid grid-cols-2 z-10">
+        <section> 
+            <a href="./index.html">
+            <button class="flex flex-row items-center gap-2 *:text-2xl font-bold text-primary hover:brightness-150 ease-in-out duration-200">
+                <img class="h-12 w-auto" src="../../Assets/STOOQ_logo.png" alt="STOOQ Logo">
+                <span class="text-primary">STOOQ</span>
+            </button>
+            </a>
+        </section>
+        <section class="flex flex-row gap-4 justify-end items-center">
+            <button class="fill-primary hover:bg-primary hover:fill-white rounded-md p-1 ease-in-out duration-200" > <svg class="fill-inherit" width="45" height="33" viewBox="0 0 45 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="fill-inherit" d="M2.39873 0.0111064C1.65267 0.127239 0.984585 0.52695 0.541448 1.12231C0.0983121 1.71767 -0.0835783 2.4599 0.0357911 3.18573C0.155161 3.91156 0.566012 4.56153 1.17796 4.99265C1.78991 5.42377 2.55283 5.60073 3.29889 5.4846H11.7379L12.2443 6.85297L14.551 13.6948L16.8576 20.5367C17.0827 21.2483 18.0391 21.9051 18.7705 21.9051H38.4616C39.2493 21.9051 40.1494 21.2483 40.3745 20.5367L44.9316 6.85297C45.1566 6.14142 44.819 5.4846 44.0314 5.4846H19.0518L16.9139 1.54368C16.6862 1.09135 16.3346 0.708925 15.8978 0.438518C15.4611 0.168111 14.9561 0.0202116 14.4384 0.0111064L3.18637 0.0111064C3.01793 -0.00370212 2.84847 -0.00370212 2.68003 0.0111064C2.56761 0.00453224 2.45489 0.00453224 2.34247 0.0111064L2.39873 0.0111064ZM20.177 27.3786C18.6017 27.3786 17.364 28.5827 17.364 30.1153C17.364 31.6479 18.6017 32.8521 20.177 32.8521C21.7523 32.8521 22.99 31.6479 22.99 30.1153C22.99 28.5827 21.7523 27.3786 20.177 27.3786ZM37.0551 27.3786C35.4798 27.3786 34.2421 28.5827 34.2421 30.1153C34.2421 31.6479 35.4798 32.8521 37.0551 32.8521C38.6304 32.8521 39.8681 31.6479 39.8681 30.1153C39.8681 28.5827 38.6304 27.3786 37.0551 27.3786Z" fill="#5A10C7"/>
+                </svg>
+            </button>
+            <button class="fill-primary hover:bg-primary hover:fill-white rounded-md p-1 ease-in-out duration-200">
+                <svg class="fill-inherit" width="48" height="40" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="fill-inherit" d="M42 19.1667C42.0069 21.3665 41.3901 23.5365 40.2 25.5C38.7889 27.853 36.6195 29.832 33.9349 31.2155C31.2503 32.599 28.1565 33.3324 25 33.3334C22.3603 33.3391 19.7562 32.8252 17.4 31.8334L6 35L9.8 25.5C8.60986 23.5365 7.99312 21.3665 8 19.1667C8.00122 16.5363 8.88122 13.9581 10.5414 11.721C12.2017 9.4838 14.5765 7.67599 17.4 6.50005C19.7562 5.50827 22.3603 4.99431 25 5.00005H26C30.1687 5.1917 34.1061 6.65798 37.0583 9.11815C40.0105 11.5783 41.77 14.8595 42 18.3334V19.1667Z" fill="#5A10C7" stroke="#5A10C7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <button>
+                <div class="w-12 h-12 aspect-square rounded-full bg-slate-900"></div>
+            </button>
+
+        </section>
+    </nav>
+</body>
+</html>
