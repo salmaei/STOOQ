@@ -19,7 +19,7 @@
         }
     </script>
 </head>
-<body class="bg-[#f2f2f2] w-screen min-h-screen flex flex-col">
+<body class="bg-[#f2f2f2] w-screen min-h-screen flex flex-col overflow-hidden">
 
     <nav class="w-full bg-white shadow-md px-4 py-2 grid grid-cols-2 z-10">
         <section> 
@@ -49,45 +49,64 @@
     </nav>
     
 
-    <main class="grid grid-cols-1 md:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_3fr] w-screen min-h-[70vh] flex-1">
-        <section class="bg-light-purple/50">
+    <main class="grid grid-cols-1 md:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_3fr] w-full min-h-[70vh] flex-1">
+        <section class="bg-light-purple/50 w-full" id="contacts" >
             <menu class="flex flex-col h-full">
-                <button class="text-primary text-xl font-bold p-6 bg-light-purple-highlight"> Beaded Wonders </button>
-                <button class="text-primary text-xl font-bold p-6 bg-light-purple hover:transition-colors ease-in-out hover:bg-light-purple-highlight duration-150">
+                <button onclick="openChat()" class="text-primary text-xl font-bold p-6 bg-light-purple-highlight"> Beaded Wonders </button>
+                <button onclick="openChat()" class="text-primary text-xl font-bold p-6 bg-light-purple hover:transition-colors ease-in-out hover:bg-light-purple-highlight duration-150">
                     <span> Shop 2 </span>
                     <div class="text-white bg-primary w-8 h-8 font-bold rounded-full aspect-square float-end"> 1 </div>
                 </button>
-                <button class="text-primary text-xl font-bold p-6 bg-light-purple hover:transition-colors ease-in-out hover:bg-light-purple-highlight duration-150">
+                <button onclick="openChat()" class="text-primary text-xl font-bold p-6 bg-light-purple hover:transition-colors ease-in-out hover:bg-light-purple-highlight duration-150">
                     <span> Shop 3 </span>
                     <div class="text-white bg-transparent w-8 h-8 font-bold rounded-full aspect-square float-end"></div>
                 </button>
-                <button class="text-primary text-xl font-bold p-6 bg-light-purple hover:transition-colors ease-in-out hover:bg-light-purple-highlight duration-150">
+                <button onclick="openChat()" class="text-primary text-xl font-bold p-6 bg-light-purple hover:transition-colors ease-in-out hover:bg-light-purple-highlight duration-150">
                     <span> Shop 4 </span>
                     <div class="text-white bg-transparent w-8 h-8 font-bold rounded-full aspect-square float-end"></div>
                 </button>
             </menu>
         </section>
 
-        <section class="grid grid-rows-[1fr_3fr_1fr] bg-white">
-            <div class="m-4">
-                <button class="float-end">
+        <section class="hidden md:grid lg:grid grid-rows-[1fr_3fr_1fr] bg-white" id="chat">
+            <div class="p-8">
+                <button class="float-end" onclick="closeChat()">
                     <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M36 12L12 36M12 12L36 36" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
             </div>
-            <div class="flex flex-col items-center">
+            <div class="flex flex-col items-center w-full">
                 <div class="bg-primary w-24 h-24 aspect-square rounded-full"></div>
                 <h2 class="mt-4 text-2xl font-bold text-primary"> Beaded Wonders </h2>
                 <p class="mt-4 text-xl font-medium text-primary">
                     we sell high quality great jewelery!
                 </p>
             </div>
-            <div class="w-full flex flex-row items-center px-24 gap-4">
+            <div class="max-w-full flex flex-row items-center px-4 gap-4">
                 <input class="flex-1 bg-light-purple/25 rounded-md border-2 text-primary border-primary text-xl px-4 py-2" />
                 <button class="bg-primary text-white px-4 py-2 text-xl rounded-md font-bold "> Send </button>
             </div>
         </section>
     </main>
+
+    <script>
+
+        const contactSection = document.querySelector("#contacts");
+        const chatSection = document.querySelector("#chat");
+
+        function openChat() {
+            contactSection.classList.add('hidden')
+            chatSection.classList.remove('hidden')
+            chatSection.classList.add('grid')
+        }
+        function closeChat() {
+            if(!contactSection.classList.contains("hidden")) return;
+            contactSection.classList.remove('hidden')
+            chatSection.classList.add('hidden')
+            chatSection.classList.remove('grid')
+        }
+
+    </script>
 </body>
 </html>
